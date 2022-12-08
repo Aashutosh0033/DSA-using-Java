@@ -2,7 +2,7 @@ package Searching_Algorithms;
 import java.util.*;
 import java.lang.*;
 
-public class Binary_search {
+public class Binary_Search_Non_Recursive {
     public static void main(String[] arg){
         Scanner in = new Scanner(System.in);
         int s_item = 1; //Search Element
