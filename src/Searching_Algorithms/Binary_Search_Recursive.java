@@ -2,18 +2,21 @@ package Searching_Algorithms;
 import java.util.*;
 
 class Algo{
-    public void binary_search(int[] arr, int size, int ind,int item){
-        if(ind<0 || ind>arr.length-1){
+    public void binary_search(int[] arr, int l, int h, int item){
+        int mid = (l+h)/2;
+
+
+        if(mid<0 || mid>arr.length-1){
             System.out.println("Item not found");
         }
-        else if(arr[ind] == item){
-            System.out.println("The item is on index : "+ind);
+        else if(arr[mid] == item){
+            System.out.println("Item found on index : "+mid);
         }
-        else if(item < arr[ind]){
-            binary_search(arr, size, ind-1,item);
+        else if(arr[mid]>item){
+            binary_search(arr,l,mid-1,item);
         }
-        else{
-            binary_search(arr, size,ind+1,item);
+        else if(arr[mid]<item){
+            binary_search(arr,mid+1,h,item);
         }
     }
 }
@@ -35,6 +38,7 @@ public class Binary_Search_Recursive {
 
         System.out.print("Enter item to search : ");
         int item = in.nextInt();
-        obj.binary_search(arr,size,ind,item);
+        int l = 0,h = arr.length-1;
+        obj.binary_search(arr,l,h,item);
     }
 }
