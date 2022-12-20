@@ -1,7 +1,7 @@
 package Data_Structures;
 
 
-
+//Linked List using Inner Class
 public class LinkedList {
 
     Node head;
